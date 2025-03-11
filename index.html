@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Jockey+One&display=swap" rel="stylesheet">
+    <title>VestCity - Coming Soon</title>
+
+    <!-- Favicon - Ikona w zakładce -->
+    <link rel="icon" href="vescitylogogotowepng.png" type="image/png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: url('vestcitystrona.png') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        /* Pasek regulaminu */
+        #terms-bar {
+            background-color: #0d0d0ebd; /* Zmieniony kolor tła */
+            color: white;
+            text-align: center;
+            padding: 10px 20px; /* Zmniejszony padding (węższy pasek) */
+            position: fixed;
+            top: 0;
+            width: 60%;
+            z-index: 1000;
+            font-family: 'Jockey One', sans-serif;
+            font-size: 18px; 
+            border-radius: 19px; 
+        }
+
+            
+                .coming-soon {
+            font-family: 'Jockey One', sans-serif;
+            font-size: 35px;
+            color: #ffffff;
+            text-align: center;
+            margin-top: 840px; 
+            text-transform: uppercase;
+            font-weight: bold;
+            opacity: 0; /* Początkowa przezroczystość */
+            animation: fadeInOut 8s ease-in-out infinite; /* Animacja pojawiania i znikania */
+        }
+
+             /* Animacja pojawiania się i znikania tekstu */
+             @keyframes fadeInOut {
+            0% {
+                opacity: 0; /* Początkowy stan - niewidoczny */
+            }
+            50% {
+                opacity: 1; /* W połowie - w pełni widoczny */
+            }
+            100% {
+                opacity: 0; /* Na końcu - niewidoczny */
+            }
+        }
+
+        #terms-bar a {
+            color: #929292; 
+            text-decoration: none;
+        }
+        
+
+        #terms-bar a:hover {
+            text-decoration: underline;
+            color: #585858; 
+        }
+        /* Pasek ładowania */
+        .loading-container {
+            text-align: center;
+            background: rgba(13, 13, 14, 0.741);
+            padding: 10px 20px; /* Zmniejszenie wysokości paska ładowania */
+            border-radius: 10px;
+            z-index: 999;
+            width: 60%; /* Dopasowanie szerokości paska */
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .loading-bar {
+            width: 100%;
+            background-color: #929292; /* Tło paska */
+            border-radius: 25px;
+            height: 10px; /* Zmniejszenie wysokości paska */
+            overflow: hidden;
+        }
+
+        .loading-progress {
+            height: 100%;
+            background-color: #585858; /* Złoty kolor paska ładowania */
+            width: 50%; /* Początkowa szerokość paska (od 50%) */
+            border-radius: 25px;
+            animation: loadAnimation 4s infinite alternate; /* Animacja */
+        }
+
+        /* Animacja zmieniająca szerokość paska */
+        @keyframes loadAnimation {
+            0% {
+                width: 50%;
+            }
+            100% {
+                width: 70%;
+            }
+            
+            
+        }
+
+        .loading-text {
+            font-size: 16px; /* Zmniejszenie rozmiaru tekstu */
+            color: white;
+            margin-top: 10px;
+        }
+
+                /* Efekt oddychania logo */
+                .logo {
+            width: 150px; /* Szerokość logo */
+            height: auto;
+            animation: breathe 3s ease-in-out infinite; /* Animacja oddychania */
+        }
+
+        /* Animacja oddychania (powiększanie i pomniejszanie) */
+        @keyframes breathe {
+            0% {
+                transform: scale(1); /* Początkowy rozmiar */
+            }
+            50% {
+                transform: scale(1.1); /* Powiększanie */
+            }
+            100% {
+                transform: scale(1); /* Wracanie do początkowego rozmiaru */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- Pasek regulaminu -->
+    <div id="terms-bar">
+        <p style="margin: 0;">OBSERWUJ POSTĘPY PROJEKTU NA NASZYM <a href="https://discord.gg/vestcity">DISCORDZIE</a></p>
+    </div>
+        
+        <!-- Tekst COMING SOON -->
+        <div class="coming-soon">
+            COMING SOON
+        </div>
+
+        <!-- Pasek ładowania -->
+        <div class="loading-container">
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+
+    <script>
+        // Zablokowanie menu kontekstowego i skrótów
+        document.addEventListener("contextmenu", event => event.preventDefault());
+        document.addEventListener("keydown", function(event) {
+            if (event.ctrlKey && (event.key === "u" || event.key === "s" || event.key === "i" || event.key === "j" || event.key === "c")) {
+                event.preventDefault();
+            }
+            if (event.key === "F12") {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
